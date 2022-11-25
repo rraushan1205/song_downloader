@@ -2,7 +2,8 @@ import bs4
 import requests
 import webbrowser
 a = 0
-res = requests.get('https://pagalfree.com/singer/Adnan Sami.html')
+singernameinput = input('Enter the name of singer : ')
+res = requests.get('https://pagalfree.com/singer/' + singernameinput + '.html')
 res.raise_for_status()
 nonStarchSoup = bs4.BeautifulSoup(res.text, 'html.parser')
 aElems = nonStarchSoup.select('a')
